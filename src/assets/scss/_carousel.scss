@@ -168,23 +168,49 @@
   left: 0;
   bottom: 0;
   z-index: 99999;
+  display: none;
   @include display(column);
   justify-content: center;
   .overlay {
-    z-index: -1;
+    z-index: 1;
     width: 100%;
     height: 100%;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.877);
   }
   .slide-galery-item-main-container {
-    height: 100%;
+    height: 120vh;
     @include display(column);
     justify-content: center;
     .image-container {
-      background-color: violet;
+      z-index: 9999;
       width: 700px;
       height: 450px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .carousel-contol-btn {
+    z-index: 99;
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    transition: $transition;
+    top: 50%;
+    &.left {
+      left: 80px;
+    }
+    &.right {
+      right: 80px;
+    }
+    &:hover {
+      color: $primary;
+    }
+    .galery-controls-icon {
+      font-size: 50px;
     }
   }
 }

@@ -2,11 +2,15 @@ import React, { Component } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { IconContext } from "react-icons";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
-const Slide = () => {
+const Slide = ({ image, onHideCarousel, visible }) => {
   return (
     <div className="slide-galery-item-main-container">
-      <div className="image-container"></div>
+      {visible && <div className="overlay" onClick={onHideCarousel}></div>}
+      <div className="image-container">
+        <img src={image.url} alt="" srcset="" />
+      </div>
     </div>
   );
 };
@@ -14,23 +18,46 @@ const Slide = () => {
 class CarouselModal extends Component {
   state = {};
   render() {
-    const { carouselVisible, images } = this.props;
-    const renderImages = [<Slide />, <Slide />];
+    const { visible, images, onHideCarousel, selectedImage } = this.props;
+    let selectedImageIndex =
+      images.findIndex((item) => item._id === selectedImage) || 0;
+
+    const newArray = images.map((image) => (
+      <Slide image={image} visible={visible} onHideCarousel={onHideCarousel} />
+    ));
+
     return (
-      <div className="carousel-modal-main-container">
-        <div className="overlay"></div>
+      <div
+        className={
+          visible
+            ? "carousel-modal-main-container visible"
+            : "carousel-modal-main-container"
+        }
+        style={{ display: visible ? "flex" : "none" }}
+      >
         <AliceCarousel
           mouseTracking
-          items={renderImages}
+          items={newArray}
           animationDuration={1000}
-          autoPlay
           infinite
           disableDotsControls
+          activeIndex={selectedImageIndex}
           renderNextButton={() => (
-            <div className="carousel-contol-btn">
+            <div className="carousel-contol-btn right">
               <IconContext.Provider
-                value={{ className: "galery-controls-icon" }}
-              ></IconContext.Provider>
+                value={{ className: "galery-controls-icon " }}
+              >
+                <FiArrowRight />
+              </IconContext.Provider>
+            </div>
+          )}
+          renderPrevButton={() => (
+            <div className="carousel-contol-btn left">
+              <IconContext.Provider
+                value={{ className: "galery-controls-icon " }}
+              >
+                <FiArrowLeft />
+              </IconContext.Provider>
             </div>
           )}
           autoPlayInterval={5000}

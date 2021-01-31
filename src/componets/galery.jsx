@@ -31,145 +31,145 @@ import { FiLink } from "react-icons/fi";
 import CarouselModal from "./carouselModal";
 const allImages = [
   {
-    id: 1,
+    _id: 1,
     categoryId: 1,
     url: image,
     animation: "zoom-in",
   },
   {
-    id: 2,
+    _id: 2,
     categoryId: 1,
     url: image2,
     animation: "zoom-in",
   },
   {
-    id: 3,
+    _id: 3,
     categoryId: 1,
     url: image3,
     animation: "zoom-in",
   },
   {
-    id: 4,
+    _id: 4,
     categoryId: 1,
     url: image4,
     animation: "zoom-in",
   },
   {
-    id: 5,
+    _id: 5,
     categoryId: 2,
     url: image5,
     animation: "zoom-in-up",
   },
   {
-    id: 6,
+    _id: 6,
     categoryId: 2,
     url: image6,
     animation: "zoom-in-up",
   },
   {
-    id: 7,
+    _id: 7,
     categoryId: 2,
     url: image7,
     animation: "zoom-in-up",
   },
   {
-    id: 8,
+    _id: 8,
     categoryId: 2,
     url: image8,
     animation: "zoom-in-up",
   },
   {
-    id: 9,
+    _id: 9,
     categoryId: 3,
     url: image9,
     animation: "flip-right",
   },
   {
-    id: 10,
+    _id: 10,
     categoryId: 3,
     url: image10,
     animation: "flip-right",
   },
   {
-    id: 11,
+    _id: 11,
     categoryId: 3,
     url: image11,
     animation: "flip-right",
   },
   {
-    id: 12,
+    _id: 12,
     categoryId: 3,
     url: image12,
     animation: "flip-right",
   },
   {
-    id: 13,
+    _id: 13,
     categoryId: 1,
     url: image13,
     animation: "zoom-in",
   },
   {
-    id: 14,
+    _id: 14,
     categoryId: 1,
     url: image14,
     animation: "zoom-in",
   },
   {
-    id: 15,
+    _id: 15,
     categoryId: 1,
     url: image15,
     animation: "zoom-in",
   },
   {
-    id: 16,
+    _id: 16,
     categoryId: 1,
     url: image16,
     animation: "zoom-in",
   },
   {
-    id: 17,
+    _id: 17,
     categoryId: 2,
     url: image17,
     animation: "zoom-in-up",
   },
   {
-    id: 18,
+    _id: 18,
     categoryId: 2,
     url: image18,
     animation: "zoom-in-up",
   },
   {
-    id: 19,
+    _id: 19,
     categoryId: 2,
     url: image19,
     animation: "zoom-in-up",
   },
   {
-    id: 20,
+    _id: 20,
     categoryId: 2,
     url: image20,
     animation: "zoom-in-up",
   },
   {
-    id: 21,
+    _id: 21,
     categoryId: 3,
     url: image21,
     animation: "flip-right",
   },
   {
-    id: 22,
+    _id: 22,
     categoryId: 3,
     url: image22,
     animation: "flip-right",
   },
   {
-    id: 23,
+    _id: 23,
     categoryId: 3,
     url: image23,
     animation: "flip-right",
   },
   {
-    id: 24,
+    _id: 24,
     categoryId: 3,
     url: image24,
     animation: "flip-right",
@@ -182,6 +182,7 @@ const designImages = allImages.filter((image) => image.categoryId === 3);
 
 class Images extends Component {
   render() {
+    const { onShowCarousel } = this.props;
     return (
       <div className="all-images-main-area">
         <div className="images-grid-container">
@@ -197,7 +198,7 @@ class Images extends Component {
               <div className="image-overlay">
                 <h3>Photography</h3>
                 <h4>Design</h4>
-                <div className="icons">
+                <div className="icons" onClick={() => onShowCarousel(item)}>
                   <IconContext.Provider value={{ className: "galery-icon" }}>
                     <BiSearchAlt />
                   </IconContext.Provider>
@@ -215,33 +216,47 @@ class Images extends Component {
 }
 class AllImages extends Component {
   render() {
-    return <Images images={allImages} />;
+    const { onShowCarousel } = this.props;
+    return <Images onShowCarousel={onShowCarousel} images={allImages} />;
   }
 }
 
 class Photographie extends Component {
   render() {
-    return <Images images={photographyImages} />;
+    const { onShowCarousel } = this.props;
+    return (
+      <Images onShowCarousel={onShowCarousel} images={photographyImages} />
+    );
   }
 }
 class Print extends Component {
   render() {
-    return <Images images={printImages} />;
+    const { onShowCarousel } = this.props;
+    return <Images onShowCarousel={onShowCarousel} images={printImages} />;
   }
 }
 class Design extends Component {
   render() {
-    return <Images images={designImages} />;
+    const { onShowCarousel } = this.props;
+    return <Images onShowCarousel={onShowCarousel} images={designImages} />;
   }
 }
 
 class Galery extends Component {
   state = {
     selectedLink: "all",
-    carouselVisible: true,
+    carouselVisible: false,
+    selectedImage: null,
   };
   handleChangeLink = (selectedLink) => {
     this.setState({ selectedLink });
+  };
+  handleHideCarousel = () => {
+    console.log("hide carousel get called");
+    this.setState({ carouselVisible: false });
+  };
+  handleShowCarousel = (image) => {
+    this.setState({ selectedImage: image._id, carouselVisible: true });
   };
   render() {
     const links = [
@@ -270,13 +285,23 @@ class Galery extends Component {
             </ul>
           </div>
           <div className="images-wrapper-area">
-            {this.state.selectedLink === "all" && <AllImages />}
-            {this.state.selectedLink === "Photographie" && <Photographie />}
-            {this.state.selectedLink === "Print" && <Print />}
-            {this.state.selectedLink === "Design" && <Design />}
+            {this.state.selectedLink === "all" && (
+              <AllImages onShowCarousel={this.handleShowCarousel} />
+            )}
+            {this.state.selectedLink === "Photographie" && (
+              <Photographie onShowCarousel={this.handleShowCarousel} />
+            )}
+            {this.state.selectedLink === "Print" && (
+              <Print onShowCarousel={this.handleShowCarousel} />
+            )}
+            {this.state.selectedLink === "Design" && (
+              <Design onShowCarousel={this.handleShowCarousel} />
+            )}
           </div>
         </div>
         <CarouselModal
+          selectedImage={this.state.selectedImage}
+          onHideCarousel={this.handleHideCarousel}
           visible={this.state.carouselVisible}
           images={allImages}
         />

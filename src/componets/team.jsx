@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { IconContext } from "react-icons";
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 import profile1 from "../assets/img/barack.jpg";
+import espoir from "../assets/img/fmb-profile.jpeg";
 class Team extends Component {
   state = {};
   render() {
@@ -14,10 +15,10 @@ class Team extends Component {
         <div className="team-members-container">
           <div className="team-members-grid">
             <div className="team-item-area">
-              <img src={profile1} alt="" />
+              <img src={espoir} alt="" />
               <div className="team-item-ovelay">
-                <h3>Barac mukelenga</h3>
-                <h4>UI Designer</h4>
+                <h3>Espoir Fumba</h3>
+                <h4>Executive Producer</h4>
                 <div className="team-member-links">
                   <a href="https://">
                     <IconContext.Provider
@@ -46,8 +47,8 @@ class Team extends Component {
             <div className="team-item-area">
               <img src={profile1} alt="" />
               <div className="team-item-ovelay">
-                <h3>Barac mukelenga</h3>
-                <h4>UI Designer</h4>
+                <h3>Mardochée Kandundao</h3>
+                <h4>Principale Cameraman </h4>
                 <div className="team-member-links">
                   <a href="https://">
                     <IconContext.Provider
@@ -76,8 +77,8 @@ class Team extends Component {
             <div className="team-item-area">
               <img src={profile1} alt="" />
               <div className="team-item-ovelay">
-                <h3>Barac mukelenga</h3>
-                <h4>UI Designer</h4>
+                <h3>Barack mukelenga</h3>
+                <h4>Web Designer</h4>
                 <div className="team-member-links">
                   <a href="https://">
                     <IconContext.Provider
@@ -106,8 +107,8 @@ class Team extends Component {
             <div className="team-item-area">
               <img src={profile1} alt="" />
               <div className="team-item-ovelay">
-                <h3>Barac mukelenga</h3>
-                <h4>UI Designer</h4>
+                <h3>Benisoit Longa</h3>
+                <h4>Photographer</h4>
                 <div className="team-member-links">
                   <a href="https://">
                     <IconContext.Provider
