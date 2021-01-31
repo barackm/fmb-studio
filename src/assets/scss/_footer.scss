@@ -13,6 +13,10 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
+  @include mediaqueries(800px) {
+    position: relative;
+    height: auto;
+  }
   // display: none;
   .footer-upper-area {
     flex: 1;
@@ -27,6 +31,25 @@
       p {
         line-height: 1.6;
         font-size: 16px;
+      }
+    }
+
+    @include mediaqueries(1000px) {
+      .left-area {
+        margin-left: 30px;
+      }
+    }
+    @include mediaqueries(350px) {
+      .left-area {
+        margin-left: 10px;
+      }
+    }
+    @include mediaqueries(900px) {
+      .left-area {
+        width: 27%;
+        h1 {
+          font-size: 30px;
+        }
       }
     }
   }
@@ -73,13 +96,52 @@
           }
         }
       }
+
+      @include mediaqueries(800px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include mediaqueries($tablet) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    @include mediaqueries(350px) {
+      margin-left: 20px;
     }
   }
+
+  @include mediaqueries($tablet) {
+    flex-direction: column;
+    .footer-upper-area {
+      width: 100%;
+      flex-direction: column;
+      .left-area {
+        padding-left: 10px;
+        width: 100%;
+        p {
+          width: 80%;
+        }
+      }
+      .right-links-area {
+        width: 100%;
+        margin-top: 0px;
+      }
+    }
+  }
+
   .footer-bottom-area {
     width: 100%;
     height: 90px;
     background-color: #111312;
     @include display(row);
+    @include mediaqueries($tablet) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .links-wrapper {
+        padding-bottom: 10px;
+      }
+    }
     .links-wrapper {
       margin-left: 70px;
       a {
@@ -98,17 +160,32 @@
           color: $primary;
         }
       }
+      @include mediaqueries(850px) {
+        margin-left: 20px;
+      }
+      @include mediaqueries(350px) {
+        margin-left: 10px;
+      }
     }
     .copyright {
       margin-right: 70px;
       font-size: 14px;
+      text-align: center;
+
       a {
         color: $white;
         text-decoration: none;
         margin-left: 10px;
+        text-align: center;
         &:hover {
           color: $primary;
         }
+      }
+      @include mediaqueries(850px) {
+        margin-right: 20px;
+      }
+      @include mediaqueries($tablet) {
+        font-size: 12px;
       }
     }
   }
@@ -118,9 +195,12 @@
   height: 480px;
   background-color: transparent;
   z-index: -1;
+  @include mediaqueries(800px) {
+    display: none;
+  }
 }
 .app-container {
-  z-index: 99;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   background-color: $about-color-main;

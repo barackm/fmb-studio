@@ -1,5 +1,6 @@
 @import "./colors";
 @import "./mixins/display";
+@import "./mixins/mediaqueries";
 @import "./variables";
 .about-page-main-area {
   width: 100%;
@@ -8,6 +9,9 @@
   font-family: #f1f1f1;
   z-index: 9999;
   background-color: $about-color-main;
+  @include mediaqueries($mobile) {
+    padding-top: 50px;
+  }
   .header {
     width: 100%;
     @include display(column);
@@ -25,6 +29,23 @@
       font-weight: 900;
       letter-spacing: -0.5px;
       font-size: 16px;
+    }
+
+    @include mediaqueries($tablet) {
+      h1 {
+        font-size: 30px;
+      }
+      h3 {
+        font-size: 16px;
+      }
+    }
+    @include mediaqueries($mobile) {
+      h1 {
+        font-size: 25px;
+      }
+      h3 {
+        font-size: 16px;
+      }
     }
   }
   .bio-area {
@@ -45,6 +66,9 @@
     justify-content: center;
     text-align: center;
     padding-top: 130px;
+    @include mediaqueries($tablet) {
+      padding-top: 0px;
+    }
     .grid-container {
       width: 80%;
       display: grid;
@@ -70,6 +94,19 @@
         .body {
           color: lighten($dark, 40%);
           line-height: 1.3;
+        }
+      }
+      @include mediaqueries(900px) {
+        width: 90%;
+      }
+      @include mediaqueries($tablet) {
+        grid-template-columns: repeat((2, 1fr));
+        padding-top: 50px;
+      }
+      @include mediaqueries($mobile) {
+        grid-template-columns: repeat((1, 1fr));
+        .grid-item-area {
+          margin-bottom: 50px;
         }
       }
     }

@@ -1,21 +1,19 @@
 import React from "react";
 import AOS from "aos";
 
-import About from "./componets/about";
-import Header from "./componets/header";
-import Galery from "./componets/galery";
-import Home from "./componets/home";
-
 import "./functions/main";
 import "aos/dist/aos.css";
 import Footer from "./componets/footer";
-import Acomplishments from "./componets/acomplishments";
-import Team from "./componets/team";
-import Testimonials from "./componets/testimonials";
+import { Switch, Route, Redirect } from "react-router-dom";
+import AboutPage from "./componets/pages/aboutPage";
+import Main from "./componets/main";
+import Header from "./componets/header";
+import ServicesPage from "./componets/pages/servicesPage";
+import ContactPage from "./componets/pages/contact";
 
 AOS.init({
   // Global settings:
-  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+  disable: false,
   startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
   initClassName: "aos-init", // class applied after initialization
   animatedClassName: "aos-animate", // class applied on animation
@@ -35,17 +33,17 @@ AOS.init({
 });
 
 function App() {
-  const [counter, setCounter] = React.useState(20);
   return (
     <div className="App">
+      <Header />
       <div className="app-container">
-        <Header counter={counter} />
-        <Home onIncrementCounter={setCounter} />
-        <About />
-        <Galery />
-        <Acomplishments />
-        <Team />
-        <Testimonials />
+        <Switch>
+          <Route path="/about" component={AboutPage} />
+          <Route path="/services" component={ServicesPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route path="/" component={Main} />
+          <Redirect to="/" />
+        </Switch>
       </div>
       <div className="footer-container"></div>
       <Footer />

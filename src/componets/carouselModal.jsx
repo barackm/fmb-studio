@@ -33,7 +33,7 @@ class CarouselModal extends Component {
             ? "carousel-modal-main-container visible"
             : "carousel-modal-main-container"
         }
-        style={{ display: visible ? "flex" : "none" }}
+        style={{ display: visible ? "flex" : "none", zIndex: 999999999 }}
       >
         <AliceCarousel
           mouseTracking

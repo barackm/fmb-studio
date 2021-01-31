@@ -8,7 +8,7 @@ const handleDragStart = (e) => e.preventDefault();
 
 const Slide = () => {
   return (
-    <div className="testimonial-slide-item">
+    <div className="testimonial-slide-item" data-aos="zoom-in">
       <div className="Carousel-item-container">
         <div className="profile-wrapper">
           <img src={image} alt="" />

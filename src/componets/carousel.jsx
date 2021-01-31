@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { IconContext } from "react-icons/";
-import image1 from "../assets/img/bg-main.jpg";
-import image2 from "../assets/img/bg-main2.jpg";
-import image3 from "../assets/img/bg-main3.jpg";
+import image1 from "../assets/img/13.jpg";
+import image2 from "../assets/img/8.jpg";
+import image3 from "../assets/img/19.jpg";
 import Slide from "./slide";
 const carouselSlides = [
   {
@@ -71,7 +71,6 @@ class HomeCarousel extends Component {
     // this.setState({ arrowsShown: false });
   };
   render() {
-    const { onIncrementCounter } = this.props;
     console.log("rerendered");
     return (
       <div className="home-carousel-main-container">
@@ -103,7 +102,6 @@ class HomeCarousel extends Component {
         </div>
         {carouselSlides.map((slide, index) => (
           <Slide
-            onIncrementCounter={onIncrementCounter}
             key={slide.id}
             slide={slide}
             index={index}

@@ -8,6 +8,10 @@
 @import "./footer";
 @import "./team";
 @import "./testimonials";
+@import "./about-page";
+@import "./services";
+@import "./contact";
+@import "./mixins/mediaqueries";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Raleway:wght@600&family=Source+Sans+Pro:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
@@ -34,10 +38,47 @@ header {
   z-index: 99999;
   @include display($direction: row);
   .header-logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-left: 50px;
     .logo-wrapper {
+      text-decoration: none;
       span {
         color: $white;
+      }
+    }
+    @include mediaqueries($tablet) {
+      padding-left: 30px;
+    }
+    .hamburger-container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      display: none;
+      padding-right: 50px;
+      .container {
+        cursor: pointer;
+        .burger {
+          width: 30px;
+          height: 3px;
+          background-color: $white;
+          position: relative;
+          margin: 5px 0;
+          color: $white;
+          transition: $transition;
+        }
+      }
+
+      @include mediaqueries($tablet) {
+        padding-right: 30px;
+        display: flex;
+        .container {
+          cursor: pointer;
+        }
       }
     }
   }
@@ -77,16 +118,31 @@ header {
         }
       }
     }
+
+    @include mediaqueries($tablet) {
+      display: none;
+    }
   }
 }
 .header-container-area.scrolling {
   height: 60px;
   background-color: $white;
   .header-logo-container {
-    padding-left: 50px;
     .logo-wrapper {
       span {
         color: $dark;
+      }
+    }
+    .burger {
+      color: #000;
+    }
+  }
+  @include mediaqueries($tablet) {
+    .hamburger-container {
+      .container {
+        .burger {
+          background-color: $dark;
+        }
       }
     }
   }
@@ -95,4 +151,64 @@ header {
       color: $dark;
     }
   }
+}
+@include mediaqueries($tablet) {
+  .header-container-area.open {
+    background-color: $white;
+    height: auto;
+    flex-direction: column;
+    .header-logo-container {
+      border-bottom: 1px solid #f2f2f2f2;
+      height: 80px;
+      .logo-wrapper {
+        padding-left: 20px;
+
+        span {
+          color: lighten($dark, 20%);
+        }
+      }
+      .hamburger-container {
+        padding-right: 40px;
+        .container {
+          .burger {
+            transform: rotate(750deg);
+            background-color: lighten($dark, 20%);
+          }
+          .burger:nth-child(2) {
+            transform: translateX(100vw);
+          }
+          .burger:nth-child(1) {
+            transform: translateY(8px) rotate(-760deg);
+          }
+          .burger:nth-child(3) {
+            transform: translateY(-8px) rotate(760deg);
+          }
+        }
+      }
+    }
+    .header-links-container {
+      display: flex;
+      width: 100%;
+      ul {
+        flex-direction: column;
+        align-items: flex-start;
+        li {
+          margin: 10px 0;
+          a {
+            color: lighten($dark, 20%);
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+  .header-container-area.scrolling.open {
+    .header-logo-container {
+      height: 60px;
+    }
+  }
+}
+@include mediaqueries($mobile) {
 }

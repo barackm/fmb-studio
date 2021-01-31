@@ -7,6 +7,9 @@
   background-color: $about-color-main;
   padding-top: 100px;
   min-height: 800px;
+  @include mediaqueries($tablet) {
+    padding-bottom: 100px;
+  }
   z-index: 9999;
   .header {
     color: lighten($dark, 20%);
@@ -26,6 +29,15 @@
       letter-spacing: -0.5px;
       font-size: 16px;
     }
+    @include mediaqueries($mobile) {
+      h1 {
+        text-transform: uppercase;
+        font-size: 30px;
+      }
+      h3 {
+        font-size: 16px;
+      }
+    }
   }
   .carousel-container {
     margin-top: 20px;
@@ -44,6 +56,32 @@
     .carousel-control-btn-wrapper.right {
       top: 40%;
       right: 50px;
+    }
+
+    @include mediaqueries(600px) {
+      .carousel-control-btn-wrapper.left {
+        left: 20px;
+      }
+      .carousel-control-btn-wrapper.right {
+        right: 20px;
+      }
+    }
+    @include mediaqueries($mobile) {
+      .carousel-control-btn-wrapper {
+        position: absolute;
+        .carousel-control-btn-icon {
+          font-size: 30px;
+          cursor: pointer;
+        }
+      }
+    }
+    @include mediaqueries(400px) {
+      .carousel-control-btn-wrapper.left {
+        left: 10px;
+      }
+      .carousel-control-btn-wrapper.right {
+        right: 10px;
+      }
     }
   }
   .testimonial-slide-item {
@@ -87,6 +125,55 @@
       .body {
         color: lighten($dark, 20%);
         line-height: 1.8;
+      }
+
+      @include mediaqueries(1000px) {
+        width: 600px;
+        height: 320px;
+        .profile-wrapper {
+          width: 100px;
+          height: 100px;
+        }
+      }
+      @include mediaqueries(900px) {
+        width: 500px;
+        height: 320px;
+        .profile-wrapper {
+          width: 100px;
+          height: 100px;
+        }
+      }
+      @include mediaqueries($tablet) {
+        width: 300px;
+        height: 520px;
+        .profile-wrapper {
+          width: 100px;
+          height: 100px;
+        }
+      }
+      @include mediaqueries(550px) {
+        width: 250px;
+        height: 500px;
+        .profile-wrapper {
+          width: 100px;
+          height: 100px;
+        }
+      }
+      @include mediaqueries(550px) {
+        width: 200px;
+        height: 500px;
+        .profile-wrapper {
+          width: 100px;
+          height: 100px;
+        }
+      }
+      @include mediaqueries(350px) {
+        width: 100%;
+        height: 500px;
+        .profile-wrapper {
+          width: 100px;
+          height: 100px;
+        }
       }
     }
   }

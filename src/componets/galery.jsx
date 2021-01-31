@@ -21,7 +21,7 @@ import image17 from "../assets/img/22.jpg";
 import image18 from "../assets/img/23.jpg";
 import image19 from "../assets/img/24.jpg";
 import image20 from "../assets/img/25.jpg";
-import image21 from "../assets/img/26.jpg";
+import image21 from "../assets/img/32.jpg";
 import image22 from "../assets/img/33.jpg";
 import image23 from "../assets/img/34.jpg";
 import image24 from "../assets/img/35.jpg";

@@ -19,12 +19,31 @@
       font-weight: 900;
       line-height: 0.1;
       margin-bottom: 8px;
+      text-align: center;
     }
     h3 {
+      text-align: center;
       text-transform: uppercase;
       font-weight: 900;
       letter-spacing: -0.5px;
       font-size: 16px;
+    }
+    @include mediaqueries($mobile) {
+      h1 {
+        text-transform: uppercase;
+        font-size: 30px;
+        font-weight: 900;
+        line-height: 0.1;
+        margin-bottom: 8px;
+        text-align: center;
+      }
+      h3 {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: -0.5px;
+        font-size: 16px;
+      }
     }
   }
   .team-members-container {
@@ -41,8 +60,7 @@
       .team-item-area {
         cursor: default;
         overflow: hidden;
-
-        height: 322px;
+        height: 300px;
         width: 100%;
         position: relative;
 
@@ -69,6 +87,7 @@
             margin-bottom: 1px;
             transform: translateY(-40px);
             transition: $transition;
+            text-align: center;
           }
           h4 {
             margin: 4px 0;
@@ -76,6 +95,7 @@
             transition: $transition;
             transition-delay: 0.1s;
             transform: translateY(-40px);
+            text-align: center;
           }
           .team-member-links {
             margin-top: 8px;
@@ -135,6 +155,90 @@
               }
             }
           }
+        }
+      }
+      @include mediaqueries(1000px) {
+        width: 90%;
+        .team-item-area {
+          height: 280px;
+        }
+      }
+      @include mediaqueries(950px) {
+        width: 95%;
+        grid-gap: 20px;
+        .team-item-area {
+          height: 280px;
+        }
+      }
+      @include mediaqueries(850px) {
+        width: 95%;
+        grid-gap: 20px;
+        .team-item-area {
+          height: 240px;
+        }
+      }
+      @include mediaqueries($tablet) {
+        width: 90%;
+        grid-gap: 40px;
+        grid-template-columns: repeat(2, 1fr);
+        .team-item-area {
+          height: 340px;
+        }
+      }
+      @include mediaqueries(560px) {
+        width: 90%;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        .team-item-area {
+          height: 300px;
+        }
+      }
+      @include mediaqueries(500px) {
+        width: 95%;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        .team-item-area {
+          height: 300px;
+        }
+      }
+      @include mediaqueries($mobile) {
+        width: 70%;
+        grid-gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        .team-item-area {
+          height: 400px;
+        }
+      }
+      @include mediaqueries(400px) {
+        width: 75%;
+        grid-gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        .team-item-area {
+          height: 400px;
+        }
+      }
+      @include mediaqueries(350px) {
+        width: 75%;
+        grid-gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        .team-item-area {
+          height: 320px;
+        }
+      }
+      @include mediaqueries(300px) {
+        width: 80%;
+        grid-gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        .team-item-area {
+          height: 320px;
+        }
+      }
+      @include mediaqueries(250px) {
+        width: 85%;
+        grid-gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        .team-item-area {
+          height: 280px;
         }
       }
     }

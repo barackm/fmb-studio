@@ -90,7 +90,7 @@ class Footer extends Component {
                       >
                         <IoMdPhonePortrait />
                       </IconContext.Provider>{" "}
-                      +(243) 977 962 061
+                      (+243) 977 962 061
                     </a>
                   </li>
                   <li>
