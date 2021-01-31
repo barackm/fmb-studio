@@ -62,9 +62,7 @@ class AboutPage extends Component {
                 illum odio quidem quo. Inventore perferendis alias quas
                 voluptatibus fugiat et necessitatibus eveniet accusantium
                 soluta. Corporis? Lorem <br /> ipsum dolor sit amet consectetur
-                adipisicing elit. Quod, officiis iste? Illo, nemo. Officiis
-                possimus eius, neque dolore quidem atque sapiente quaerat
-                repellendus dolor odio fugit praesentium, beatae iusto magni?
+                adipisicing elit. Quod, officiis iste?
               </p>
             </div>
           </div>

@@ -22,8 +22,10 @@
       line-height: 0.1;
       margin-bottom: 8px;
       z-index: 9;
+      text-align: center;
     }
     h4 {
+      text-align: center;
       text-transform: uppercase;
       font-weight: 900;
       letter-spacing: -0.5px;
@@ -38,6 +40,13 @@
       top: 0;
       z-index: 1;
       background-color: rgba(0, 0, 0, 0.616);
+    }
+
+    @include mediaqueries($mobile) {
+      h1 {
+        font-size: 35px;
+        line-height: 1.2;
+      }
     }
   }
   .contact-form-main-container {
@@ -95,6 +104,48 @@
           margin-bottom: 5px;
         }
       }
+
+      @include mediaqueries(1000px) {
+        width: 55%;
+        .form-container {
+          .form-control {
+            margin-left: 30px;
+          }
+        }
+        .submit-btn-wrapper {
+          padding-left: 20px;
+        }
+      }
+
+      @include mediaqueries(770px) {
+        flex-direction: column;
+        width: 78%;
+        .form-container {
+          .form-control {
+            margin-left: 0px;
+          }
+        }
+        .submit-btn-wrapper {
+          padding-left: 20px;
+        }
+      }
+      @include mediaqueries($mobile) {
+        flex-direction: column;
+        width: 90%;
+        .form-container {
+          .form-control {
+            margin-left: 0px;
+          }
+        }
+        .submit-btn-wrapper {
+          padding-left: 20px;
+        }
+      }
+      @include mediaqueries(350px) {
+        .submit-btn-wrapper {
+          padding-left: 0px;
+        }
+      }
     }
     .contact-detail-wrapper {
       width: 40%;
@@ -113,6 +164,22 @@
           color: lighten($dark, 35%);
         }
       }
+      @include mediaqueries(770px) {
+        flex-direction: column;
+        width: 78%;
+        padding-left: 0;
+        padding-top: 50px;
+      }
+      @include mediaqueries($mobile) {
+        flex-direction: column;
+        width: 90%;
+        padding-left: 0;
+        padding-top: 50px;
+      }
+    }
+
+    @include mediaqueries(780px) {
+      flex-direction: column;
     }
   }
   .submit-btn-wrapper {
