@@ -1,0 +1,98 @@
+@import "./colors";
+@import "./mixins/display";
+@import "./variables";
+@import "./home";
+@import "./carousel";
+@import "./about";
+@import "./galery";
+@import "./footer";
+@import "./team";
+@import "./testimonials";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Raleway:wght@600&family=Source+Sans+Pro:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $font-family;
+}
+.App {
+  width: 100%;
+  overflow-x: hidden;
+}
+header {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  background-color: transparent;
+  border-bottom: 1px solid $light;
+  position: fixed;
+  transition: $transition;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  @include display($direction: row);
+  .header-logo-container {
+    padding-left: 50px;
+    .logo-wrapper {
+      span {
+        color: $white;
+      }
+    }
+  }
+  .header-links-container {
+    padding-right: 50px;
+    height: 100%;
+    @include display($direction: row);
+    ul {
+      height: 100%;
+      @include display($direction: row);
+      li {
+        height: 100%;
+        list-style: none;
+        padding: 0 20px;
+        position: relative;
+        &::before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          left: 0;
+          right: 0;
+          border-bottom: 1px solid $white;
+          bottom: 0;
+          transform: scale(0);
+          transform-origin: left;
+          transition: $transition;
+        }
+        &:hover::before {
+          transform: scale(1);
+        }
+        @include display($direction: row);
+        a {
+          color: $white;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+.header-container-area.scrolling {
+  height: 60px;
+  background-color: $white;
+  .header-logo-container {
+    padding-left: 50px;
+    .logo-wrapper {
+      span {
+        color: $dark;
+      }
+    }
+  }
+  .header-links-container {
+    a {
+      color: $dark;
+    }
+  }
+}

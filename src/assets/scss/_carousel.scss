@@ -1,0 +1,190 @@
+@import "./mixins/display";
+@import "./colors";
+@import "./functions/home-functions";
+
+.home-carousel-main-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: darken($about-color-main, 80%);
+  .carousel-prev-btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    @include display(row);
+    justify-content: center;
+    .carousel-control-icon {
+      transform: translateX(-100vw);
+      font-size: 20px;
+      cursor: pointer;
+      border: border($white);
+      padding: 15px;
+      color: $white;
+      transition: $transition;
+      transition-duration: 1s;
+      &:hover {
+        color: $white;
+        background-color: $primary;
+        border: none;
+      }
+    }
+    z-index: 9999;
+  }
+  .carousel-next-btn {
+    top: 0;
+    position: absolute;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    @include display(row);
+    justify-content: center;
+    .carousel-control-icon {
+      font-size: 20px;
+      cursor: pointer;
+      font-size: 20px;
+      cursor: pointer;
+      border: border($white);
+      padding: 15px;
+      color: $white;
+      transition: $transition;
+      transition-duration: 1s;
+      transform: translateX(100vw);
+      &:hover {
+        color: $white;
+        background-color: $primary;
+        border: none;
+      }
+    }
+    z-index: 999;
+  }
+  .home-carousel-slide-area {
+    display: none;
+    width: 100%;
+    height: 100%;
+    transition: $transition;
+    z-index: 99;
+    animation: fadeInOpacity 1s ease-in;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .home-carousel-oveylay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.445);
+    z-index: 1;
+  }
+  .home-hero-main-area {
+    z-index: 99;
+    width: 100%;
+    @include display(column);
+    height: 100%;
+    justify-content: center;
+    color: $white;
+    h2 {
+      text-transform: uppercase;
+      font-size: 50px;
+      margin-bottom: -60px;
+    }
+    h1 {
+      text-transform: uppercase;
+      font-size: 90px;
+      margin-bottom: -14px;
+    }
+    h3 {
+      font-size: 20px;
+      //   text-transform: uppercase;
+    }
+    .home-button {
+      border: 1px solid $white;
+      cursor: pointer;
+      padding: 20px 50px;
+      text-transform: uppercase;
+      border-radius: 50px;
+      margin-top: 20px;
+      transition: $transition;
+      &:hover {
+        background-color: $white;
+        color: #000;
+      }
+    }
+  }
+  .home-carousel-slide-area.active {
+    display: flex;
+  }
+  .home-carousel-dots-area {
+    position: absolute;
+    width: 100%;
+    bottom: 60px;
+    @include display(row);
+    justify-content: center;
+    z-index: 99;
+    span {
+      width: 50px;
+      height: 5px;
+      background-color: $white;
+      margin: 0 8px;
+      cursor: pointer;
+      transition: $transition;
+      border-radius: 10px;
+    }
+    .active {
+      background-color: $primary;
+    }
+  }
+
+  .carousel-prev-btn.shown {
+    .carousel-control-icon {
+      transform: translateX(0vw);
+    }
+  }
+  .carousel-next-btn.shown {
+    .carousel-control-icon {
+      transform: translateX(0vw);
+    }
+  }
+}
+
+@keyframes fadeInOpacity {
+  from {
+    opacity: 0;
+    display: none;
+  }
+  to {
+    opacity: 1;
+    display: flex;
+  }
+}
+
+// carousel galery
+.carousel-modal-main-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 99999;
+  @include display(column);
+  justify-content: center;
+  .overlay {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.877);
+  }
+  .slide-galery-item-main-container {
+    height: 100%;
+    @include display(column);
+    justify-content: center;
+    .image-container {
+      background-color: violet;
+      width: 700px;
+      height: 450px;
+    }
+  }
+}

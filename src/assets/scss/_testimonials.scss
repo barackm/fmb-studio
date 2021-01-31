@@ -1,0 +1,104 @@
+@import "./colors";
+@import "./mixins/display";
+// @import "react-alice-carousel/lib/scss/alice-carousel.scss";
+
+.testimonials-main-container-area {
+  width: 100%;
+  background-color: $about-color-main;
+  padding-top: 100px;
+  min-height: 800px;
+  z-index: 9999;
+  .header {
+    color: lighten($dark, 20%);
+    width: 100%;
+    @include display(column);
+    justify-content: center;
+    h1 {
+      text-transform: uppercase;
+      font-size: 40px;
+      font-weight: 900;
+      line-height: 0.1;
+      margin-bottom: 8px;
+    }
+    h3 {
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      font-size: 16px;
+    }
+  }
+  .carousel-container {
+    margin-top: 20px;
+
+    .carousel-control-btn-wrapper {
+      position: absolute;
+      .carousel-control-btn-icon {
+        font-size: 40px;
+        cursor: pointer;
+      }
+    }
+    .carousel-control-btn-wrapper.left {
+      top: 40%;
+      left: 50px;
+    }
+    .carousel-control-btn-wrapper.right {
+      top: 40%;
+      right: 50px;
+    }
+  }
+  .testimonial-slide-item {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .Carousel-item-container {
+      width: 650px;
+      height: 370px;
+      background-color: $white;
+      box-shadow: 0 10px 30px 5px rgba(17, 21, 23, 0.1);
+      margin-bottom: 40px;
+      margin-top: 40px;
+      overflow: hidden;
+      @include display(column);
+      justify-content: center;
+      padding: 30px 50px;
+      text-align: center;
+      .profile-wrapper {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .profile-details {
+        h3 {
+          font-size: 25px;
+          margin-bottom: 5px;
+        }
+        span {
+          font-weight: bold;
+          color: #888;
+        }
+        margin-bottom: 30px;
+      }
+      .body {
+        color: lighten($dark, 20%);
+        line-height: 1.8;
+      }
+    }
+  }
+  .carousel-dots {
+    width: 15px;
+    height: 15px;
+    margin: 0 6px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgb(170, 169, 169);
+    &.active {
+      background-color: $primary;
+    }
+  }
+}

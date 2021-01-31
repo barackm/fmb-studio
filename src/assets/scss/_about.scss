@@ -1,0 +1,77 @@
+@import "./colors";
+@import "./mixins/display";
+@import "./variables";
+.about-page-main-area {
+  width: 100%;
+  min-height: 700px;
+  padding-top: 100px;
+  font-family: #f1f1f1;
+  z-index: 9999;
+  background-color: $about-color-main;
+  .header {
+    width: 100%;
+    @include display(column);
+    justify-content: center;
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 40px;
+      font-weight: 900;
+      line-height: 0.1;
+      margin-bottom: 8px;
+    }
+    h3 {
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      font-size: 16px;
+    }
+  }
+  .bio-area {
+    width: 100%;
+    @include display(row);
+    justify-content: center;
+    text-align: center;
+    p {
+      width: 70%;
+      color: lighten($dark, 40%);
+      line-height: 1.6;
+      font-weight: normal;
+    }
+  }
+  .about-grid-area {
+    width: 100%;
+    @include display(row);
+    justify-content: center;
+    text-align: center;
+    padding-top: 130px;
+    .grid-container {
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 30px;
+
+      .grid-item-area {
+        .header {
+          color: lighten($dark, 40%);
+          h2 {
+            text-transform: uppercase;
+            line-height: 1;
+            font-size: 20px;
+            color: $dark;
+          }
+          .icon-container {
+            .about-grid-icon {
+              font-size: 50px;
+              color: $dark;
+            }
+          }
+        }
+        .body {
+          color: lighten($dark, 40%);
+          line-height: 1.3;
+        }
+      }
+    }
+  }
+}

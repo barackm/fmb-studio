@@ -1,0 +1,8 @@
+@import "./mixins/display";
+@import "./colors";
+@import "./variables";
+.home-main-area {
+  width: 100%;
+  height: 750px;
+  z-index: 9999;
+}
