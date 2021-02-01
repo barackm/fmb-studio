@@ -177,8 +177,9 @@
         text-decoration: none;
         margin-left: 10px;
         text-align: center;
+        color: $primary;
         &:hover {
-          color: $primary;
+          color: lighten($primary, 20%);
         }
       }
       @include mediaqueries(850px) {

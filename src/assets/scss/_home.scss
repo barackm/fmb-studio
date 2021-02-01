@@ -1,8 +1,13 @@
 @import "./mixins/display";
+@import "./mixins/mediaqueries";
 @import "./colors";
 @import "./variables";
 .home-main-area {
   width: 100%;
   height: 750px;
   z-index: 9999;
+
+  @include mediaqueries($mobile) {
+    height: 600px;
+  }
 }
