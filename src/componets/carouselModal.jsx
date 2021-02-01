@@ -9,7 +9,7 @@ const Slide = ({ image, onHideCarousel, visible }) => {
     <div className="slide-galery-item-main-container">
       {visible && <div className="overlay" onClick={onHideCarousel}></div>}
       <div className="image-container">
-        <img src={image.url} alt="" srcset="" />
+        <img src={image.url} alt="" />
       </div>
     </div>
   );

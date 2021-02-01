@@ -271,13 +271,13 @@ class Galery extends Component {
         <div className="galery-main-area">
           <div className="header">
             <ul>
-              {links.map((link) => (
+              {links.map((link, index) => (
                 <li
                   className={
                     this.state.selectedLink === link.name ? "active" : ""
                   }
                   onClick={() => this.handleChangeLink(link.name)}
-                  key={link.id}
+                  key={link.id + index}
                 >
                   {link.name}
                 </li>

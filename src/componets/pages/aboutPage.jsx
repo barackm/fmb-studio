@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import About from "../about";
 import image1 from "../../assets/img/36.jpg";
-import image2 from "../../assets/img/about-1.jpg";
 import Acomplishments from "../acomplishments";
 import Team from "../team";
 import Testimonials from "../testimonials";
@@ -18,7 +17,7 @@ class AboutPage extends Component {
         <About />
         <div className="skills-main-area">
           <div className="image-wrapper">
-            <img src={image1} alt="" srcset="" />
+            <img src={image1} alt="" />
           </div>
           <div className="text-wrapper">
             <div className="skills-header">
@@ -67,7 +66,7 @@ class AboutPage extends Component {
             </div>
           </div>
           <div className="image-wrapper-about">
-            <img src={image1} alt="" srcset="" />
+            <img src={image1} alt="" />
           </div>
         </div>
         <Team />

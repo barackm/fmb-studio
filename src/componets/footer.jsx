@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { IconContext } from "react-icons";
-import { FaFacebookF, FaTwitter, FaMapMarkerAlt } from "react-icons/fa";
+import { FaFacebookF, FaYoutube, FaMapMarkerAlt } from "react-icons/fa";
 import { ImInstagram } from "react-icons/im";
 import { IoLogoWhatsapp, IoMdPhonePortrait } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
-import { AiFillLinkedin, AiOutlineGlobal } from "react-icons/ai";
+import { AiOutlineGlobal } from "react-icons/ai";
+import { Link } from "react-router-dom";
 class Footer extends Component {
   state = {};
   render() {
@@ -27,19 +28,19 @@ class Footer extends Component {
 
                 <ul>
                   <li>
-                    <a href="">Filmage</a>
+                    <a href="#1">Filmage</a>
                   </li>
                   <li>
-                    <a href="">Design</a>
+                    <a href="#1">Design</a>
                   </li>
                   <li>
-                    <a href="">Impresion sur T-shirt</a>
+                    <a href="#1">Impresion sur T-shirt</a>
                   </li>
                   <li>
-                    <a href="">Video live</a>
+                    <a href="#1">Video live</a>
                   </li>
                   <li>
-                    <a href="">Location matos</a>
+                    <a href="#1">Location matos</a>
                   </li>
                 </ul>
               </div>
@@ -48,19 +49,19 @@ class Footer extends Component {
 
                 <ul>
                   <li>
-                    <a href="">Home</a>
+                    <Link to="/">Home</Link>
                   </li>
                   <li>
-                    <a href="">A propos de nous</a>
+                    <Link to="/about">A propos de nous</Link>
                   </li>
                   <li>
-                    <a href="">Services</a>
+                    <Link to="/services">Services</Link>
                   </li>
                   <li>
-                    <a href="">Galery</a>
+                    <Link to="/">Galery</Link>
                   </li>
                   <li>
-                    <a href="">Contact</a>
+                    <Link to="/contact">Contact</Link>
                   </li>
                 </ul>
               </div>
@@ -69,7 +70,7 @@ class Footer extends Component {
 
                 <ul>
                   <li>
-                    <a href="">
+                    <a href="#1">
                       <IconContext.Provider
                         value={{
                           className: "footer-link-social-media-icon contact",
@@ -81,7 +82,7 @@ class Footer extends Component {
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a href="#1">
                       {" "}
                       <IconContext.Provider
                         value={{
@@ -94,7 +95,7 @@ class Footer extends Component {
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a href="#1">
                       <IconContext.Provider
                         value={{
                           className: "footer-link-social-media-icon contact",
@@ -106,7 +107,7 @@ class Footer extends Component {
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a href="#1">
                       <IconContext.Provider
                         value={{
                           className: "footer-link-social-media-icon contact",
@@ -124,39 +125,33 @@ class Footer extends Component {
         </div>
         <div className="footer-bottom-area">
           <div className="links-wrapper">
-            <a href="https://">
+            <a href="https://web.facebook.com/FMBStudio-240776083478314/?_rdc=1&_rdr">
               <IconContext.Provider
                 value={{ className: "footer-link-social-media-icon" }}
               >
                 <FaFacebookF />
               </IconContext.Provider>
             </a>
-            <a href="https://">
+            <a href="https://www.instagram.com/espoirfmb/">
               <IconContext.Provider
                 value={{ className: "footer-link-social-media-icon" }}
               >
                 <ImInstagram />
               </IconContext.Provider>
             </a>
-            <a href="https://">
+            <a href="https://wa.me/243977962061">
               <IconContext.Provider
                 value={{ className: "footer-link-social-media-icon" }}
               >
                 <IoLogoWhatsapp />
               </IconContext.Provider>
             </a>
-            <a href="https://">
+
+            <a href="https://www.youtube.com/channel/UCILje3JnAGxfYvSS5Jbr7Lw">
               <IconContext.Provider
                 value={{ className: "footer-link-social-media-icon" }}
               >
-                <AiFillLinkedin />
-              </IconContext.Provider>
-            </a>
-            <a href="https://">
-              <IconContext.Provider
-                value={{ className: "footer-link-social-media-icon" }}
-              >
-                <FaTwitter />
+                <FaYoutube />
               </IconContext.Provider>
             </a>
           </div>
@@ -165,7 +160,7 @@ class Footer extends Component {
             <span>
               {new Date().getFullYear()} FMB STUDIO Tous droits reservés |
               Powered by
-              <a href="http://">Barack Mukelenga</a>{" "}
+              <a href="https://wa.me/243975480970">Barack Mukelenga</a>{" "}
             </span>
           </div>
         </div>

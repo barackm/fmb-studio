@@ -3054,6 +3054,18 @@
   cursor: pointer !important;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-page-main-container .submit-btn-wrapper .btn-container.sending .sending-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.616);
+  cursor: not-allowed;
 }
 
 .contact-page-main-container .submit-btn-wrapper .btn-container:hover {
@@ -3090,6 +3102,74 @@
 .map-container .content .map {
   width: 100%;
   height: 100%;
+}
+
+.contact-page-main-container {
+  /* Safari */
+}
+
+.contact-page-main-container .loader {
+  border: 6px solid #fff;
+  border-radius: 50%;
+  border-top: 6px solid #0091ea;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 1s linear infinite;
+  /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.loading-spinner-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 50px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .loading-spinner-container {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .loading-spinner-container {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-spinner-container {
+    padding-left: 0px;
+  }
 }
 
 body {
@@ -3379,5 +3459,25 @@ header .header-links-container ul li a {
   .header-container-area.scrolling.open .header-logo-container {
     height: 60px;
   }
+}
+
+.Toastify {
+  z-index: 9999999999999;
+}
+
+.Toastify__toast {
+  z-index: 9999999999999;
+}
+
+.Toastify__toast--error {
+  z-index: 9999999999999;
+}
+
+.Toastify__toast--success {
+  z-index: 9999999999999;
+}
+
+.Toastify__toast-container.Toastify__toast-container--top-right {
+  z-index: 9999999999999;
 }
 /*# sourceMappingURL=main.css.map */

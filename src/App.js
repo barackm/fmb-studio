@@ -1,5 +1,7 @@
 import React from "react";
 import AOS from "aos";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "./functions/main";
 import "aos/dist/aos.css";
@@ -35,6 +37,17 @@ AOS.init({
 function App() {
   return (
     <div className="App">
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Header />
       <div className="app-container">
         <Switch>

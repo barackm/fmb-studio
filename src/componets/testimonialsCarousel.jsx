@@ -4,7 +4,6 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import { IconContext } from "react-icons";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import image from "../assets/img/profile.jpg";
-const handleDragStart = (e) => e.preventDefault();
 
 const Slide = () => {
   return (

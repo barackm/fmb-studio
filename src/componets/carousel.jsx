@@ -5,27 +5,28 @@ import image1 from "../assets/img/13.jpg";
 import image2 from "../assets/img/8.jpg";
 import image3 from "../assets/img/19.jpg";
 import Slide from "./slide";
+
 const carouselSlides = [
   {
     id: 1,
     title: "Du serieux dans le business",
     subtitle: "CLEAN & SIMPLE",
     image: image1,
-    details: "choisir la meilleure photographie c'est choir FMB",
+    details: "choisir la meilleure photographie c'est choisir FMB Studio",
   },
   {
     id: 2,
     title: "Higher resolution",
     subtitle: "perfet & safe",
     image: image2,
-    details: "choisir la meilleure photographie c'est choir FMB",
+    details: "choisir la meilleure photographie c'est choisir FMB Studio",
   },
   {
     id: 3,
     title: "best cameras",
     image: image3,
     subtitle: "CLEAN & SIMPLE",
-    details: "choisir la meilleure photographie c'est choir FMB",
+    details: "choisir la meilleure photographie c'est choisir FMB Studio",
   },
 ];
 
@@ -71,7 +72,6 @@ class HomeCarousel extends Component {
     // this.setState({ arrowsShown: false });
   };
   render() {
-    console.log("rerendered");
     return (
       <div className="home-carousel-main-container">
         <div
@@ -102,7 +102,7 @@ class HomeCarousel extends Component {
         </div>
         {carouselSlides.map((slide, index) => (
           <Slide
-            key={slide.id}
+            key={slide.id + index}
             slide={slide}
             index={index}
             activeSlide={this.state.activeSlide}
@@ -112,7 +112,7 @@ class HomeCarousel extends Component {
           {carouselSlides.map((item, index) => (
             <span
               className={index === this.state.activeSlide && "active"}
-              key={item.id}
+              key={item.id + index}
               onClick={() => this.handleChangeSlide(index)}
             ></span>
           ))}

@@ -212,3 +212,18 @@ header {
 }
 @include mediaqueries($mobile) {
 }
+.Toastify {
+  z-index: 9999999999999;
+}
+.Toastify__toast {
+  z-index: 9999999999999;
+}
+.Toastify__toast--error {
+  z-index: 9999999999999;
+}
+.Toastify__toast--success {
+  z-index: 9999999999999;
+}
+.Toastify__toast-container.Toastify__toast-container--top-right {
+  z-index: 9999999999999;
+}
