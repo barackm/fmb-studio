@@ -12,6 +12,7 @@ import Main from "./componets/main";
 import Header from "./componets/header";
 import ServicesPage from "./componets/pages/servicesPage";
 import ContactPage from "./componets/pages/contact";
+import GaleryPage from "./componets/pages/galeryPage";
 
 AOS.init({
   // Global settings:
@@ -54,6 +55,7 @@ function App() {
           <Route path="/about" component={AboutPage} />
           <Route path="/services" component={ServicesPage} />
           <Route path="/contact" component={ContactPage} />
+          <Route path="/galery" component={GaleryPage} />
           <Route path="/" component={Main} />
           <Redirect to="/" />
         </Switch>

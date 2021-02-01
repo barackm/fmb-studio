@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { IconContext } from "react-icons/";
-import image1 from "../assets/img/13.jpg";
-import image2 from "../assets/img/8.jpg";
-import image3 from "../assets/img/19.jpg";
+import image2 from "../assets/img/13.jpg";
+import image3 from "../assets/img/8.jpg";
+import image1 from "../assets/img/61.jpeg";
 import Slide from "./slide";
 
 const carouselSlides = [
@@ -37,8 +37,8 @@ class HomeCarousel extends Component {
   };
   componentDidMount() {
     setInterval(() => {
-      // this.handleGoToNext();
-    }, 7000);
+      this.handleGoToNext();
+    }, 8000);
   }
   handleChangeSlide = (index) => {
     this.setState({ activeSlide: index });

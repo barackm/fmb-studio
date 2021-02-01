@@ -4,8 +4,10 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import { IconContext } from "react-icons";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import image from "../assets/img/profile.jpg";
+import image1 from "../assets/img/22.jpg";
+import image2 from "../assets/img/mardochee.jpeg";
 
-const Slide = () => {
+const Slide = ({ image }) => {
   return (
     <div className="testimonial-slide-item" data-aos="zoom-in">
       <div className="Carousel-item-container">
@@ -29,7 +31,11 @@ const Slide = () => {
 class TestimonialsCarousel extends Component {
   state = {};
   render() {
-    const items = [<Slide />, <Slide />, <Slide />];
+    const items = [
+      <Slide image={image1} />,
+      <Slide image={image2} />,
+      <Slide image={image} />,
+    ];
     return (
       <div className="testimonials-carousel-main-container">
         <AliceCarousel

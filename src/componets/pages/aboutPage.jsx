@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import About from "../about";
-import image1 from "../../assets/img/36.jpg";
+import image1 from "../../assets/img/66.jpeg";
+import image2 from "../../assets/img/73.jpeg";
 import Acomplishments from "../acomplishments";
 import Team from "../team";
 import Testimonials from "../testimonials";
@@ -66,7 +67,7 @@ class AboutPage extends Component {
             </div>
           </div>
           <div className="image-wrapper-about">
-            <img src={image1} alt="" />
+            <img src={image2} alt="" />
           </div>
         </div>
         <Team />

@@ -47,6 +47,9 @@ class Header extends Component {
               <Link to="/services">Services</Link>
             </li>
             <li>
+              <Link to="/galery">Galerie</Link>
+            </li>
+            <li>
               <Link to="/contact">Contact</Link>
             </li>
           </ul>

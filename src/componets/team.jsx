@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { IconContext } from "react-icons";
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 import profile1 from "../assets/img/profile.jpg";
-import espoir from "../assets/img/fmb-profile.jpeg";
+import espoir from "../assets/img/72.jpeg";
 import mardochee from "../assets/img/mardochee.jpeg";
 import benisoit from "../assets/img/benisoit.jpg";
 class Team extends Component {

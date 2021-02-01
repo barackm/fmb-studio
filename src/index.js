@@ -8,7 +8,7 @@ import ScrollTop from "./componets/scrollTop";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <ScrollTop>
         <App />
       </ScrollTop>
