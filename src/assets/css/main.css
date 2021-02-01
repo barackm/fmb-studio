@@ -9,7 +9,7 @@
 
 @media (max-width: 480px) {
   .home-main-area {
-    height: 600px;
+    min-height: 100vh;
   }
 }
 
@@ -3415,6 +3415,8 @@ header .header-links-container ul li a {
 .header-container-area.scrolling {
   height: 60px;
   background-color: #fff;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.514);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.514);
 }
 
 .header-container-area.scrolling .header-logo-container .logo-wrapper span {

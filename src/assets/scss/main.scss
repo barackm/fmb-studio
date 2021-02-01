@@ -127,6 +127,7 @@ header {
 .header-container-area.scrolling {
   height: 60px;
   background-color: $white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.514);
   .header-logo-container {
     .logo-wrapper {
       span {

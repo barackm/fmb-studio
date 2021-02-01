@@ -8,6 +8,6 @@
   z-index: 9999;
 
   @include mediaqueries($mobile) {
-    height: 600px;
+    min-height: 100vh;
   }
 }
