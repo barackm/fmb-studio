@@ -6,7 +6,6 @@ import Testimonials from "../componets/testimonials";
 import About from "../componets/about";
 import Galery from "../componets/galery";
 import Home from "../componets/home";
-import Loading from "./loading";
 
 class Main extends Component {
   handleHideHeader = () => {
