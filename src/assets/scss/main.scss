@@ -70,6 +70,7 @@ header {
           margin: 5px 0;
           color: $white;
           transition: $transition;
+          transition-duration: 1s;
         }
       }
 
@@ -227,4 +228,43 @@ header {
 }
 .Toastify__toast-container.Toastify__toast-container--top-right {
   z-index: 9999999999999;
+}
+// loading spinner sytyles
+
+.loadin-main-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #5b86e5;
+  animation: animateTextLoading 5s infinite;
+  h3 {
+    color: #fff;
+    font-size: 250px;
+    opacity: 0.3;
+    @include mediaqueries(900px) {
+      font-size: 200px;
+    }
+    @include mediaqueries($tablet) {
+      font-size: 150px;
+    }
+    @include mediaqueries($mobile) {
+      font-size: 90px;
+    }
+  }
+}
+
+@keyframes animateTextLoading {
+  0% {
+    background-color: #36d1dc;
+  }
+
+  50% {
+    background: #cc2b5e;
+  }
+  100% {
+    background-color: #36d1dc;
+  }
 }

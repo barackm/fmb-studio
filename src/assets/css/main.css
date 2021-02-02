@@ -3309,6 +3309,8 @@ header .header-logo-container .hamburger-container .container .burger {
   color: #fff;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
 }
 
 @media (max-width: 768px) {
@@ -3523,5 +3525,71 @@ header .header-links-container ul li a {
 
 .Toastify__toast-container.Toastify__toast-container--top-right {
   z-index: 9999999999999;
+}
+
+.loadin-main-container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-color: #5b86e5;
+  -webkit-animation: animateTextLoading 5s infinite;
+          animation: animateTextLoading 5s infinite;
+}
+
+.loadin-main-container h3 {
+  color: #fff;
+  font-size: 250px;
+  opacity: 0.3;
+}
+
+@media (max-width: 900px) {
+  .loadin-main-container h3 {
+    font-size: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .loadin-main-container h3 {
+    font-size: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loadin-main-container h3 {
+    font-size: 90px;
+  }
+}
+
+@-webkit-keyframes animateTextLoading {
+  0% {
+    background-color: #36d1dc;
+  }
+  50% {
+    background: #cc2b5e;
+  }
+  100% {
+    background-color: #36d1dc;
+  }
+}
+
+@keyframes animateTextLoading {
+  0% {
+    background-color: #36d1dc;
+  }
+  50% {
+    background: #cc2b5e;
+  }
+  100% {
+    background-color: #36d1dc;
+  }
 }
 /*# sourceMappingURL=main.css.map */

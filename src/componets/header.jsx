@@ -20,11 +20,18 @@ class Header extends Component {
   handleToggleNavbar = () => {
     this.navbar.current.classList.toggle("open");
   };
+  handleCloseNavbar = () => {
+    this.navbar.current.classList.remove("open");
+  };
   render() {
     return (
       <header className="header-container-area" ref={this.navbar}>
         <div className="header-logo-container">
-          <Link to="/" className="logo-wrapper">
+          <Link
+            to="/"
+            className="logo-wrapper"
+            onClick={this.handleCloseNavbar}
+          >
             <span>FMB STUDIO</span>
           </Link>
           <div className="hamburger-container">
@@ -38,19 +45,29 @@ class Header extends Component {
         <div className="header-links-container">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link onClick={this.handleCloseNavbar} to="/">
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/about">Apropos</Link>
+              <Link onClick={this.handleCloseNavbar} to="/about">
+                Apropos
+              </Link>
             </li>
             <li>
-              <Link to="/services">Services</Link>
+              <Link onClick={this.handleCloseNavbar} to="/services">
+                Services
+              </Link>
             </li>
             <li>
-              <Link to="/galery">Galerie</Link>
+              <Link onClick={this.handleCloseNavbar} to="/galery">
+                Galerie
+              </Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link onClick={this.handleCloseNavbar} to="/contact">
+                Contact
+              </Link>
             </li>
           </ul>
         </div>

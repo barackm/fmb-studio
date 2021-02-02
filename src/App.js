@@ -13,6 +13,7 @@ import Header from "./componets/header";
 import ServicesPage from "./componets/pages/servicesPage";
 import ContactPage from "./componets/pages/contact";
 import GaleryPage from "./componets/pages/galeryPage";
+import Loading from "./componets/loading";
 
 AOS.init({
   // Global settings:
@@ -35,35 +36,52 @@ AOS.init({
   anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
 });
 
-function App() {
-  return (
-    <div className="App">
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-      <Header />
-      <div className="app-container">
-        <Switch>
-          <Route path="/about" component={AboutPage} />
-          <Route path="/services" component={ServicesPage} />
-          <Route path="/contact" component={ContactPage} />
-          <Route path="/galery" component={GaleryPage} />
-          <Route path="/" component={Main} />
-          <Redirect to="/" />
-        </Switch>
-      </div>
-      <div className="footer-container"></div>
-      <Footer />
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    loading: false,
+  };
+  componentDidMount() {
+    this.setState({ loading: true });
+    setTimeout(() => {
+      this.setState({ loading: false });
+    }, 6000);
+  }
+  render() {
+    return (
+      <>
+        {this.state.loading ? (
+          <Loading loading={this.state.loading} />
+        ) : (
+          <div className="App">
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
+            <Header />
+            <div className="app-container">
+              <Switch>
+                <Route path="/about" component={AboutPage} />
+                <Route path="/services" component={ServicesPage} />
+                <Route path="/contact" component={ContactPage} />
+                <Route path="/galery" component={GaleryPage} />
+                <Route path="/" component={Main} />
+                <Redirect to="/" />
+              </Switch>
+            </div>
+            <div className="footer-container"></div>
+            <Footer />
+          </div>
+        )}
+      </>
+    );
+  }
 }
 
 export default App;

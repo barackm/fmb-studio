@@ -6,23 +6,25 @@ import Testimonials from "../componets/testimonials";
 import About from "../componets/about";
 import Galery from "../componets/galery";
 import Home from "../componets/home";
+import Loading from "./loading";
 
 class Main extends Component {
-  state = {};
   handleHideHeader = () => {
     const header = document.querySelector(".header-container-area");
     header.classList.remove("open");
   };
   render() {
     return (
-      <div className="app-container" onClick={this.handleHideHeader}>
-        <Home />
-        <About />
-        <Galery />
-        <Acomplishments />
-        <Team />
-        <Testimonials />
-      </div>
+      <>
+        <div className="app-container" onClick={this.handleHideHeader}>
+          <Home />
+          <About />
+          <Galery />
+          <Acomplishments />
+          <Team />
+          <Testimonials />
+        </div>
+      </>
     );
   }
 }
