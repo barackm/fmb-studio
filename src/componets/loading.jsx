@@ -6,6 +6,7 @@ class Loading extends Component {
     return (
       <div className="loadin-main-container">
         <h3>FMB</h3>
+        <h5>STUDIO</h5>
         {/* <RingLoader
           color={"white"}
           loading={this.props.loading}
