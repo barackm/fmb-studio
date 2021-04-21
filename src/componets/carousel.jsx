@@ -63,7 +63,6 @@ class HomeCarousel extends Component {
     index--;
 
     this.setState({ activeSlide: index });
-    this.render();
   };
   handleShowArrows = () => {
     // this.setState({ arrowsShown: true });

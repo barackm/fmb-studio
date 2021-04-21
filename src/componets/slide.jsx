@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 class Slide extends Component {
   render() {
-    const { slide, index, activeSlide, onIncrementCounter } = this.props;
+    const { slide, index, activeSlide } = this.props;
     return (
       <div
         className={
@@ -27,11 +27,6 @@ class Slide extends Component {
             className="home-button"
             // data-aos-delay={1000}
             data-aos="fade-up"
-            onClick={() =>
-              onIncrementCounter((prevState) => {
-                console.log(prevState);
-              })
-            }
           >
             voir plus
           </div>
