@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Studio Photo website for Photographers where they can post the best of their works, and get feedback from visitors.
 
 ![screenshot](./screenshooot.png)
 ## Available Scripts
