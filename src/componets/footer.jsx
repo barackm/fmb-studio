@@ -160,7 +160,7 @@ class Footer extends Component {
             <span>
               {new Date().getFullYear()} FMB STUDIO Tous droits reservés |
               Powered by
-              <a href="https:/barackm.me">Barack Mukelenga</a>{" "}
+              <a href="https://barackm.me">Barack Mukelenga</a>{" "}
             </span>
           </div>
         </div>
