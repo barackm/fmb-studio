@@ -1,6 +1,6 @@
-@import "./colors";
-@import "./mixins/display";
-@import "./variables";
+@import './colors';
+@import './mixins/display';
+@import './variables';
 .team-main-area {
   width: 100%;
   height: auto;
@@ -68,6 +68,7 @@
           width: 100%;
           height: 100%;
           transition: $transition;
+          object-fit: cover;
         }
         .team-item-ovelay {
           position: absolute;
